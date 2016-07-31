@@ -1,0 +1,19 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #777; }
+
+.main__question {
+  font-size: 20px;
+  color: #fff;
+  text-align: center; }
+.main__image {
+  width: 400px;
+  height: 400px; }
+.main__answer {
+  padding-top: 20px;
+  text-align: center; }
+  .main__answer .form-control {
+    display: inline-block;
+    width: 200px; }
+
+/*# sourceMappingURL=main.css.map */
