@@ -1,10 +1,13 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #777; }
+  background-color: #666; }
+
+.header-tabs li a {
+  color: #333; }
 
 .main__question {
   font-size: 20px;
-  color: #fff;
+  color: #333;
   text-align: center; }
 .main__image {
   width: 400px;

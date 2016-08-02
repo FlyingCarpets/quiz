@@ -1,18 +1,25 @@
 //Colors
-$background-color: #777;
+$background-color: #666;
 $text-color: #fff;
+$white: #fff;
+$black: #000;
+$text-color: #333;
 
 // Base
 body {
 	font-family: 'Open Sans', sans-serif;
 	background-color: $background-color;
-
-	.main {
-		
-	}
 }
 
 // Specific
+.header-tabs {
+	li {
+		a {
+			color: $text-color;
+		}
+	}
+}
+
 .main {
 	&__question {
 		font-size: 20px;
