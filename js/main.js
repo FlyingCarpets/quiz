@@ -1,5 +1,4 @@
-function pickRandomTask(){
-  function newTask(image, answer) {
+function newTask(image, answer) {
     this.image = image;
     this.answer = answer;
   }
@@ -10,7 +9,10 @@ function pickRandomTask(){
   var task4 = new newTask('img/oboe.jpg', 'obojus');
 
   var taskList = [task1, task2, task3, task4];
+console.log(taskList);
 
+function pickRandomTask(){
+  
     if (taskList.length  > 0) {
       var num = Math.floor(Math.random() * taskList.length);
       document.getElementById('randomImage').src = taskList[num].image;
@@ -22,7 +24,7 @@ function pickRandomTask(){
         switch(insertedText) {
           case taskList[num].answer:
             taskList.splice(num, 1); 
-            console.log(taskList.length);
+            console.log(taskList);
             pickRandomTask();
           break;
           default: 
