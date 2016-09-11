@@ -1,41 +1,35 @@
-function newTask(image, answer) {
-  this.image = image;
-  this.answer = answer;
-}
-
-  var task1 = new newTask("img/violin.jpg", "smuikas");
-  var task2 = new newTask('img/trumpet.jpg', 'trimitas');
-  var task3 = new newTask('img/piano.jpg', 'pianinas');
-  var task4 = new newTask('img/oboe.jpg', 'obojus');
-
-  var taskList = [task1, task2, task3, task4];
+var data_path = "https://raw.githubusercontent.com/FlyingCarpets/quiz/gh-pages/data/questions.json";
+$.getJSON(data_path, function (data) {
+  taskList = data;
+  console.log(taskList);
+});
 
 function pickRandomTask(){
-  
-  if (taskList.length  > 0) {
-    var num = Math.floor(Math.random() * taskList.length);
-    document.getElementById('randomImage').src = taskList[num].image;
-    console.log(taskList[num]);
+
+  if (taskList.questions.length  > 0) {
+    var num = Math.floor(Math.random() * taskList.questions.length);
+    document.getElementById('randomImage').src = taskList.questions[num].image;
+    console.log(taskList.questions[num]);
 
     function compareAnswer() {
       var insertedText = document.getElementById("instrument-answer").value.toLowerCase();
       console.log(insertedText);
-      if(insertedText == taskList[num].answer) {
-        taskList.splice(num, 1); 
-        console.log(taskList);
+      if(insertedText == taskList.questions[num].answer) {
+        taskList.questions.splice(num, 1);
+        console.log(taskList.questions);
         pickRandomTask();
       } else {
         alert("Neteisingas atsakymas. Bandyti dar kartą");
-      } 
+      }
     }
-    
+
     pickRandomTask.compareAnswer = compareAnswer;
-    
+
   } else  {
-    alert("Žinai tik 4 muzikos instrumentus - nieko gero! Lauk tęsinio!");
+    alert("Pabaiga");
   }
 }
-  
+
 $(function() {
 
   $(document).on('click', '.js-art', function() {
@@ -62,7 +56,7 @@ $(function() {
       },
       success: function(data) {
         $('.js-task-block').html(data);
-          pickRandomTask();
+        pickRandomTask();
       }
     });
   });
