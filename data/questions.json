@@ -1,20 +1,20 @@
 {
-  questions: [
+  "questions": [
     {
-      image: "img/violin.jpg",
-      answer: "smuikas"
+      "image": "img/violin.jpg",
+      "answer": "smuikas"
     },
     {
-      image: "img/trumpet.jpg",
-      answer: "trimitas"
+      "image": "img/trumpet.jpg",
+      "answer": "trimitas"
     },
     {
-      image: "img/piano.jpg",
-      answer: "pianinas"
+      "image": "img/piano.jpg",
+      "answer": "pianinas"
     },
     {
-      image: "mg/oboe.jpg",
-      answer: "obojus"
+      "image": "mg/oboe.jpg",
+      "answer": "obojus"
     }
   ]
 }
